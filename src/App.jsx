@@ -31,11 +31,6 @@ function App() {
         </main>
 
       </div>
-      {/* <About />
-    */}
-
-      {/* <h1> Weather app</h1> */}
-
     </BrowserRouter>
   )
 }

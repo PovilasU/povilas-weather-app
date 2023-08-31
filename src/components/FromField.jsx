@@ -1,8 +1,8 @@
-export default function Formfield() {
+export default function Formfield({ title, name }) {
     return (
-
         <div>
-            FormField
+            <label>{title}</label>
+            <input type="text" name={name} autoComplete="off" />
         </div>
     )
 }
