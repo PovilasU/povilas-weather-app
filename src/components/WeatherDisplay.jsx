@@ -1,8 +1,10 @@
 export default function WeatherDisplay({ info, selection }) {
     return (
         <>
-            <h3>{selection.name}, {selection.admin1}, {selection.country}</h3>
-            <table>
+            <h3 className="center">
+                {selection.name}, {selection.admin1}, {selection.country}
+            </h3>
+            <table id="weather-display" className="module">
                 <thead>
                     <tr>
                         <th>Date</th>

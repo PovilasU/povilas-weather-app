@@ -5,12 +5,12 @@ export default function LocationResults({ locations, updateSelection }) {
         updateSelection(location);
     }
     return (
-        <div>
+        <div id="location-results" className="module">
             {locations.map(location => (
-                <div key={location.id}>
-                    <div>
+                <div className="location" key={location.id}>
+                    <div className="region">
                         <div>{location.country} </div>
-                        <div>{location.admin1} </div>
+                        <div className="subregion">{location.admin1} </div>
                     </div>
                     <div>
                         <button onClick={() => { handler(location) }}>

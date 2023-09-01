@@ -38,9 +38,9 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div>
-        <header>
-          <h1>Weather App</h1>
+      <div id="wrapper">
+        <header clasName="module">
+          <h1 id="logo">Weather App</h1>
           <nav>
             <Link to='/'>App</Link>
             <Link to='/about'>About</Link>
@@ -64,6 +64,9 @@ function App() {
             <Route path='/about' element={<About />} />
           </Routes>
         </main>
+        <footer>
+          <p>Author: Povilas Urbonas</p>
+          &copy; 2023</footer>
       </div>
     </BrowserRouter>
   )

@@ -18,15 +18,12 @@ export default function LocationSearch(props) {
             props.updateLocations([])
         }
     }
-
-
-
     return (
-        <form onSubmit={handleSearch}>
+        <form id="location-search" className='module' onSubmit={handleSearch}>
             <h2>Enter a location</h2>
             <Formfield title="Location" name="location" />
-            <div>
-                <div>
+            <div className='jcsb'>
+                <div className='error'>
                     {errorMsg}
                 </div>
                 <button>
