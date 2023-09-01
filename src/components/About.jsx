@@ -14,11 +14,7 @@ export default function About() {
                 <li>Fetch API</li>
                 <li>https://api.open-meteo.com</li>
                 <li>https://geocoding-api.open-meteo.com/</li>
-
-
             </ul>
-
-
             <div className="contact-links jcse">
                 <a href="https://www.linkedin.com/in/povilas-urbonas-0a6a53a4/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <a href="https://github.com/PovilasU/povilas-weather-app" target="_blank" rel="noopener noreferrer">GitHub</a>

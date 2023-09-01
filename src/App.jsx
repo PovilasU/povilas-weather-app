@@ -39,7 +39,7 @@ function App() {
   return (
     <BrowserRouter>
       <div id="wrapper">
-        <header clasName="module">
+        <header className="module">
           <h1 id="logo">Weather App</h1>
           <nav>
             <Link to='/'>App</Link>
