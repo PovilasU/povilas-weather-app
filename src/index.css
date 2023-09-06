@@ -1,10 +1,10 @@
 :root {
   --primaryOld: #cde4de;
   --primary: #303134;
-  ;
   --darker: rgba(0, 0, 0, 0.4);
   --shadow: rgba(0, 0, 0, 0.1);
-  --highlight: #005e8a;
+  --highlight: white;
+  --highlight-blue: #005e8a;
   --text: #e8eaed;
   --light-blue-grey: #bdc1c6;
   --dark: rgba(0, 0, 0, 0.9);
@@ -35,12 +35,13 @@ body {
   font-family: arial, sans-serif;
   color: var(--light-blue-grey);
   background-color: var(--dark);
+  font-family: arial, sans-serif;
 }
 
 a {
   text-decoration: none;
   color: var(--highlight);
-  font-weight: bold;
+  font-weight: normal;
 }
 
 h1,
@@ -80,7 +81,8 @@ button {
 }
 
 button:hover {
-  background-color: var(--primary);
+  /* background-color: var(--primary); */
+  background-color: red;
 }
 
 #wrapper {
@@ -117,6 +119,8 @@ main>* {
 footer {
   padding-bottom: 1rem;
   text-align: center;
+  background: #171717;
+  min-width: 100%;
 }
 
 #location-search {
@@ -128,8 +132,27 @@ footer {
   & button {
     margin-top: .5rem;
     padding: .5rem;
+    background-color: #303134;
+    color: var(--highlight);
+    border: 1px solid #5f6368;
+    border-radius: 4px;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  & button:hover {
+    border-color: var(--light-blue-grey);
   }
 }
+
+
 
 .form-field {
   display: grid;
@@ -143,7 +166,8 @@ footer {
 }
 
 .error {
-  color: maroon;
+
+  color: darksalmon;
 }
 
 .module {
@@ -164,6 +188,8 @@ footer {
   border-radius: .5rem;
   /* word-break: break-all; */
 }
+
+
 
 .location>* {
   overflow-x: hidden;
