@@ -1,9 +1,13 @@
 :root {
-  --primary: #cde4de;
+  --primaryOld: #cde4de;
+  --primary: #303134;
+  ;
   --darker: rgba(0, 0, 0, 0.4);
   --shadow: rgba(0, 0, 0, 0.1);
   --highlight: #005e8a;
-  --text: #131b1d;
+  --text: #e8eaed;
+  --light-blue-grey: #bdc1c6;
+  --dark: rgba(0, 0, 0, 0.9);
 }
 
 * {
@@ -25,8 +29,12 @@ html {
 body {
   margin: 0;
   /* background-image: url("https://www.businessinsider.in/photo/47547654/40-trips-you-should-take-before-you-turn-30/explore-the-sahara-desert-the-largest-desert-on-the-african-continent-.jpg"); */
-  background-image: url("https://povilas-weather-app.netlify.app/1540012.jpg");
-  background-repeat: no-repeat;
+  /* background-image: url("https://povilas-weather-app.netlify.app/1540012.jpg");
+  background-repeat: no-repeat; */
+  font-size: 14px;
+  font-family: arial, sans-serif;
+  color: var(--light-blue-grey);
+  background-color: var(--dark);
 }
 
 a {
@@ -48,8 +56,17 @@ input {
   padding: .5rem;
   border: 0;
   border-radius: 0px;
-  background-color: rgba(255, 255, 255, 0.8);
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  background-color: #202124;
   width: 100%;
+  border-radius: 24px;
+  color: var(--text);
+  min-height: 44px;
+  border: 1px solid #5f6368;
+  box-shadow: none;
+  border-radius: 24px;
+  margin: 0 auto;
+  max-width: 1584px
 }
 
 input:focus {
