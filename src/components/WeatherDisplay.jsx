@@ -1,3 +1,7 @@
+
+import { reformatDate } from './utils'
+
+
 export default function WeatherDisplay({ info, selection }) {
     return (
         <>
@@ -15,7 +19,7 @@ export default function WeatherDisplay({ info, selection }) {
                 <tbody>
                     {Object.values(info.time).map((day, i) => (
                         <tr key={day}>
-                            <td>{day}</td>
+                            <td>{reformatDate(day)}</td>
                             <td>{Object.values(info.temperature_2m_min)[i]}&#176;C</td>
                             <td>{Object.values(info.temperature_2m_max)[i]}&#176;C</td>
                         </tr>
