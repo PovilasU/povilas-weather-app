@@ -21,7 +21,7 @@ export default function LocationSearch(props) {
     return (
         <form id="location-search" className='module' onSubmit={handleSearch}>
             <h2>Enter a location</h2>
-            <Formfield title="Location" name="location" />
+            <Formfield title="Location" name="location" placeholder="Location" />
             <div className='jcsb'>
                 <div className='error'>
                     {errorMsg}

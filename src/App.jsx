@@ -6,27 +6,49 @@ import About from './components/About';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
+/*
+
+*/
+
 function App() {
 
-  const API_ROOT = `https://api.open-meteo.com/v1/forecast?format=json&daily=temperature_2m_max,temperature_2m_min&`
+  /*
+    https://api.music.com/albums?artist=The Beatles&decade=1960s
+      artist: "The Beatles",
+      decade: "1960s"
+
+      wind , humidity
+      images,
+      goto:free incon website
+      
+  */
+
+
+
+  const API_ROOT = `https://api.open-meteo.com/v1/forecast?format=json&daily=temperature_2m_max,temperature_2m_min&hourly=temperature_2m&current_weather=true&`
   let [locations, updateLocations] = useState([])
   let [selection, updateSelection] = useState(null)
   let [info, updateInfo] = useState(null)
 
+  /*
+      {info && (
+        <div>{info.now} {info.temperature} </div>
+      )}
+  */
+
   async function handleSelectionChange() {
-    console.log("33")
+
     if (selection) {
       let rest = await fetch(API_ROOT + `latitude=${selection.latitude}&longitude=${selection.longitude}&timezone=${selection.timezone}`);
       let data = await rest.json();
       console.log("test")
       console.log(data);
       updateLocations([]);
-      updateInfo(data.daily);
+      updateInfo(data);
     }
   }
 
   useEffect(() => {
-    console.log("11")
     handleSelectionChange();
   }, [selection]);
 

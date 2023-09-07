@@ -1,4 +1,4 @@
-export default function FormField({ title, name }) {
+export default function FormField({ title, name, placeholder }) {
     return (
         <div className="form-field">
             <label>
@@ -8,6 +8,7 @@ export default function FormField({ title, name }) {
                 type="text"
                 name={name}
                 autoComplete="off"
+                placeholder={placeholder}
             />
         </div>
     )
