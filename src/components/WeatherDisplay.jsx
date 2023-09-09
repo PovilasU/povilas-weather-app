@@ -1,21 +1,12 @@
 
-import { reformatDate } from './utils'
+import { reformatDate, weather_interpretation, formatDate } from './utils'
 
 
 // reformating minutes
 // https://pixabay.com/
 //svelte
 //vue
-const prefix0 = n => n < 10 ? "0" + n : n
 
-function formatDate(date) {
-    date = new Date(date)
-    let time = "";
-    time += prefix0(date.getHours()) + ':'
-    time += prefix0(date.getMinutes()) + ' '
-    // time += date.getTimezoneOffset()
-    return time
-}
 
 export default function WeatherDisplay({ info, selection }) {
 
@@ -32,23 +23,37 @@ export default function WeatherDisplay({ info, selection }) {
     } = daily
 
     const currentTime = formatDate(current_weather.time)
+    const day_min_temp = temperature_2m_min[Object.keys(temperature_2m_min)[0]]
+    const day_max_temp = temperature_2m_max[Object.keys(temperature_2m_max)[0]]
+
+
+
+
+
+
 
     return (
         <>
             <div className='current-weather'>
+                <h2 className="">Today</h2>
                 <h3 className="center">
-                    {selection.name}, {selection.admin1}, {selection.country} As of {currentTime}
+
+                    {selection.name},
+                    {/* {selection.admin1},  */}
+                    &nbsp;{selection.country} As of {currentTime}
                 </h3>
                 <div>
-                    <h4>Today</h4>
-                    <div>temperature 31</div>
-                    <div>suny</div>
-                    <div>day,32 Night 18</div>
+                    {/* <h4>Today</h4> */}
+                    <div>
+                        <span>temperature {current_weather.temperature} &#176;C</span>
+                    </div>
+                    <span>{weather_interpretation(current_weather.weathercode)}</span> <br></br>
+                    <span>day, {day_max_temp}&#176;C Night {day_min_temp}&#176;C</span>
                 </div>
 
             </div>
 
-            <table id="weather-display" className="module">
+            {/* <table id="weather-display" className="module">
                 <thead>
                     <tr>
                         <th>Date</th>
@@ -64,8 +69,9 @@ export default function WeatherDisplay({ info, selection }) {
                             <td>{Object.values(temperature_2m_max)[i]}&#176;C</td>
                         </tr>
                     ))}
+
                 </tbody>
-            </table>
+            </table> */}
         </>
     )
 }
