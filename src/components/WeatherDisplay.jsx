@@ -55,56 +55,6 @@ export default function WeatherDisplay({ info, selection }) {
 
             </div>
 
-            {/* <center>
-                <div className='module '>
-                    <h2>Today's Forecast for  {selection.name}, &nbsp;{selection.country}</h2>
-                    <table border="1" >
-                        <tbody>
-                            <tr border="1">
-                                <th>Morning</th>
-                                <th>Afternoon</th>
-                                <th>Evening</th>
-                                <th>Overnight</th>
-                            </tr >
-                            <tr border="1">
-                                <td>22 &#176;C</td>
-                                <td>32 &#176;C</td>
-                                <td>31 &#176;C</td>
-                                <td>15 &#176;C</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-            </center> */}
-
-
-            <table id="weather-display" className="module">
-                <caption><h2>Daily Forecast</h2></caption>
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Min</th>
-                        <th>Max</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {Object.values(time).map((day, i) => (
-                        <tr key={day}>
-                            <td>{reformatDate(day)}</td>
-                            <td>{Object.values(temperature_2m_min)[i]}&#176;C</td>
-                            <td>{Object.values(temperature_2m_max)[i]}&#176;C</td>
-                        </tr>
-                    ))}
-
-                </tbody>
-            </table>
-
-
-
             <Forecast info={info} type="Daily" />
             <Forecast info={info} type="Hourly" />
 
