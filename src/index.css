@@ -191,6 +191,19 @@ footer {
   /* word-break: break-all; */
 }
 
+.week-forecast-main {
+  display: flex;
+  /* flex-direction: row; */
+  flex-wrap: wrap;
+  border: 1px solid red;
+}
+
+.week-forecast {
+  /* display: flex; */
+  flex-direction: column;
+  /* flex-wrap: nowrap; */
+  border: 1px solid green;
+}
 
 
 .location>* {

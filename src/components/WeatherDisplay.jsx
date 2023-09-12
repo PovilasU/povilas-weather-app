@@ -52,8 +52,33 @@ export default function WeatherDisplay({ info, selection }) {
                 </div>
 
             </div>
+            <div>
+                <h2>Today's Forecast for  {selection.name}, &nbsp;{selection.country}</h2>
+                <table border="1" >
+                    <tr border="1">
+                        <th>Morning</th>
+                        <th>Afternoon</th>
+                        <th>Evening</th>
+                        <th>Overnight</th>
+                    </tr >
+                    <tr border="1">
+                        <td>22 &#176;C</td>
+                        <td>32 &#176;C</td>
+                        <td>31 &#176;C</td>
+                        <td>15 &#176;C</td>
+                    </tr>
 
-            {/* <table id="weather-display" className="module">
+
+                </table>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+
+            <table id="weather-display" className="module">
+                <caption><h2>Daily Forecast</h2></caption>
                 <thead>
                     <tr>
                         <th>Date</th>
@@ -71,7 +96,23 @@ export default function WeatherDisplay({ info, selection }) {
                     ))}
 
                 </tbody>
-            </table> */}
+            </table>
+
+
+            <section className='week-forecast-main'>
+
+                {Object.values(time).map((day, i) => (
+                    <div key={day} className='week-forecast'>
+                        <div>{reformatDate(day)}</div>
+                        <div>{Object.values(temperature_2m_min)[i]}&#176;C</div>
+                        <div>{Object.values(temperature_2m_max)[i]}&#176;C</div>
+
+                    </div>
+
+                ))}
+            </section>
+
+
         </>
     )
 }
