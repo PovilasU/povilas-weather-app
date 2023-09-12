@@ -8,7 +8,18 @@ export const reformatDate = (dateStr) => {
 export const weather_interpretation = (code) => {
     let desc = "";
     if (code === 0) {
+
         desc = "Clear sky"
+
+        /*
+            return {
+                desc: "Clear sky",
+                img: "clearsky.jpg"
+            }
+        */
+        /*
+        
+        desc ={ description: "asdads", img="sunny.jpg"}*/
     }
     if (code > 0 & code < 4) {
         desc = "Partly cloudy"

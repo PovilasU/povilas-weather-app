@@ -82,7 +82,8 @@ button {
 
 button:hover {
   /* background-color: var(--primary); */
-  background-color: red;
+  background-color: lightcyan;
+  ;
 }
 
 #wrapper {
@@ -191,20 +192,25 @@ footer {
   /* word-break: break-all; */
 }
 
-.week-forecast-main {
+.week-forecast-wrapper {
   display: flex;
   /* flex-direction: row; */
   flex-wrap: wrap;
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  justify-content: space-evenly;
 }
 
 .week-forecast {
   /* display: flex; */
   flex-direction: column;
   /* flex-wrap: nowrap; */
-  border: 1px solid green;
+  padding-right: 10px;
 }
 
+.week-forecast-wrapper .week-forecast:not(:last-child) {
+  border-right: 1px solid var(--light-blue-grey);
+
+}
 
 .location>* {
   overflow-x: hidden;
@@ -271,4 +277,8 @@ footer {
   .module {
     padding: .5rem;
   }
+}
+
+.heade-1 {
+  font-size: 3rem;
 }
