@@ -5,6 +5,7 @@ const LocationSearch = lazy(() => import("./components/LocationSearch"));
 const LocationResults = lazy(() => import("./components/LocationResults"));
 const WeatherDisplay = lazy(() => import("./components/WeatherDisplay"));
 const About = lazy(() => import("./components/About"));
+import Footer from "./components/Footer";
 
 function App() {
   const API_ROOT = `https://api.open-meteo.com/v1/forecast?format=json&daily=temperature_2m_max,temperature_2m_min&hourly=temperature_2m&current_weather=true&`;
@@ -69,10 +70,7 @@ function App() {
             />
           </Routes>
         </main>
-        <footer>
-          <p>Author: Povilas Urbonas</p>
-          &copy; 2023
-        </footer>
+        <Footer />
       </div>
     </BrowserRouter>
   );
