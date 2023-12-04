@@ -1,17 +1,13 @@
-import { reformatDate } from "./utils";
+import { reformatDate, filterTime } from "./utils";
+
 export default ({ info, type }) => {
   let { temperature_2m_max, temperature_2m_min, temperature_2m, time } =
     info[type.toLowerCase()];
 
   if (type === "Hourly") {
     const currentTime = new Date();
-    const filteredTime = time
-      .filter((_, idx) => idx % 5 !== 0 && new Date(time[idx]) > currentTime)
-      .slice(0, 5);
-    time = filteredTime;
-    temperature_2m = temperature_2m
-      .filter((_, idx) => idx % 5 !== 0 && new Date(time[idx]) > currentTime)
-      .slice(0, 5);
+    time = filterTime(time, currentTime);
+    temperature_2m = filterTime(temperature_2m, currentTime);
   }
 
   return (
